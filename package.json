@@ -2,6 +2,7 @@
 	"name": "pdf-to-word",
 	"version": "1.0.0",
 	"main": "index.js",
+    "homepage": "https://scheinin.github.io/pdf-to-word",
 	"scripts": {
 		"build": "webpack --mode production",
 		"start": "webpack serve --mode development",
@@ -13,6 +14,7 @@
 	"description": "",
 	"devDependencies": {
 		"copy-webpack-plugin": "^12.0.2",
+		"gh-pages": "^6.3.0",
 		"html-webpack-plugin": "^5.6.3",
 		"ts-loader": "^9.5.2",
 		"typescript": "^5.7.3",

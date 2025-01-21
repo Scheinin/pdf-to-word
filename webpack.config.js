@@ -4,11 +4,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 	entry: './src/index.ts',
-	optimization: {
-		splitChunks: {
-			chunks: 'all', // 将所有模块进行分割
-		},
-	},
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'dist'),
