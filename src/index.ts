@@ -1,7 +1,6 @@
 import { getDocument, GlobalWorkerOptions } from 'pdfjs-dist';
 import { Document, Packer, Paragraph, TextRun } from 'docx';
 
-// 设置 Worker 文件路径
 GlobalWorkerOptions.workerSrc = './pdf.worker.min.js';
 
 const fileInput = document.getElementById('pdf-upload') as HTMLInputElement;
@@ -23,11 +22,9 @@ convertButton.addEventListener('click', async () => {
 	if (fileInput.files && fileInput.files[0]) {
 		const file = fileInput.files[0];
 
-		// 更新状态
 		statusParagraph.textContent = `Processing file: ${file.name}...`;
 
 		try {
-			// 读取 PDF 文件
 			const pdfBytes = await file.arrayBuffer();
 			const pdfDoc = await getDocument({ data: pdfBytes }).promise;
 			const pageCount = pdfDoc.numPages;
@@ -68,7 +65,6 @@ convertButton.addEventListener('click', async () => {
 				link.click();
 			});
 
-			// 更新状态
 			statusParagraph.textContent =
 				'Conversion successful! Downloading...';
 		} catch (error) {
